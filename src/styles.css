@@ -1,0 +1,87 @@
+/* ─────────────────────────────────────────────────────────────
+   HKT Website — Global Styles
+   ───────────────────────────────────────────────────────────── */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&display=swap');
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── Animations ─────────────────────────────────────────────── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1;   }
+  50%       { opacity: 0.3; }
+}
+
+@keyframes gridScroll {
+  from { background-position: 0 0;     }
+  to   { background-position: 60px 60px; }
+}
+
+@keyframes orb1 {
+  0%, 100% { transform: translate(0, 0)      scale(1);   }
+  50%       { transform: translate(60px,-40px) scale(1.1); }
+}
+
+@keyframes orb2 {
+  0%, 100% { transform: translate(0,  0)     scale(1);   }
+  50%       { transform: translate(-50px,50px) scale(0.9); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Entry animations ───────────────────────────────────────── */
+.hero-fade   { animation: fadeIn 1s       ease both; }
+.hero-fade-1 { animation: fadeIn 1s 0.2s  ease both; }
+.hero-fade-2 { animation: fadeIn 1s 0.45s ease both; }
+.hero-fade-3 { animation: fadeIn 1s 0.7s  ease both; }
+.hero-fade-4 { animation: fadeIn 1s 0.95s ease both; }
+
+/* ── Cards ──────────────────────────────────────────────────── */
+.card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(255,255,255,0.2) !important;
+  box-shadow: 0 24px 60px rgba(255,255,255,0.05) !important;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 4px; }
